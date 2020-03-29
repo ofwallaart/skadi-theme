@@ -1,8 +1,8 @@
 <?php
 /**
- * MaterialWP Theme Customizer
+ * Skadi Theme Customizer
  *
- * @package MaterialWP
+ * @package Skadi
  */
 
 /**

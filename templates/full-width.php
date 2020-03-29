@@ -6,7 +6,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package MaterialWP
+ * @package Skadi
  */
 
 get_header(); ?>

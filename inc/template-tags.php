@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package MaterialWP
+ * @package Skadi
  */
 
 if ( ! function_exists( 'materialwp_posted_on' ) ) :

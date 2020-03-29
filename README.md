@@ -1,8 +1,8 @@
-# MaterialWP
+# Skadi
 
 This is a starter Material Design WordPress Theme based off the Bootstrap framework.
 
-[View Demo](http://materialwp.com)
+[View Demo](http://skadi.com)
 
 
 ## Getting Started

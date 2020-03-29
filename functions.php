@@ -1,13 +1,13 @@
 <?php
 /**
- * MaterialWP functions and definitions
+ * Skadi functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package MaterialWP
+ * @package Skadi
  */
 
-if ( ! function_exists( 'materialwp_setup' ) ) :
+if ( ! function_exists( 'skadi_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -15,14 +15,14 @@ if ( ! function_exists( 'materialwp_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function materialwp_setup() {
+function skadi_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on MaterialWP, use a find and replace
-	 * to change 'materialwp' to the name of your theme in all the template files.
+	 * If you're building a theme based on Skadi, use a find and replace
+	 * to change 'skadi' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'materialwp', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'skadi', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -44,7 +44,7 @@ function materialwp_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'materialwp' ),
+		'primary' => esc_html__( 'Primary', 'skadi' ),
 	) );
 
 	/*
@@ -60,7 +60,7 @@ function materialwp_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'materialwp_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'skadi_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
@@ -69,7 +69,7 @@ function materialwp_setup() {
 	add_theme_support( 'customize-selective-refresh-widgets' );
 }
 endif;
-add_action( 'after_setup_theme', 'materialwp_setup' );
+add_action( 'after_setup_theme', 'skadi_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -78,10 +78,10 @@ add_action( 'after_setup_theme', 'materialwp_setup' );
  *
  * @global int $content_width
  */
-function materialwp_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'materialwp_content_width', 640 );
+function skadi_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'skadi_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'materialwp_content_width', 0 );
+add_action( 'after_setup_theme', 'skadi_content_width', 0 );
 
 
 /**

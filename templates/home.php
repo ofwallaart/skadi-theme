@@ -16,9 +16,9 @@ get_header(); ?>
 
 <div class="home-hero">
 	<div class="container">
-		<h1>MaterialWP</h1>
+		<h1>Skadi</h1>
 		<p class="lead">Material Design WordPress Theme</p>
-		<p><a href="https://github.com/braginteractive/materialwp/archive/materialwp.zip" class="btn btn-primary btn-success btn-raised btn-lg"> Download MaterialWP</a> </p>
+		<p><a href="https://github.com/braginteractive/materialwp/archive/materialwp.zip" class="btn btn-primary btn-success btn-raised btn-lg"> Download Skadi</a> </p>
 		<p>View other <a class="mdt" href="http://materialdesignthemes.com" target="_blank">Material Design Themes</a> </p>
 	</div>
 </div>
@@ -32,25 +32,25 @@ get_header(); ?>
 			
 			<i class="material-icons">done_all</i>
 			<h3>Coolness </h3>
-			<p>MaterialWP uses the <a href="https://github.com/FezVrasta/bootstrap-material-design" target="_blank"> Material Design Bootstrap theme</a> by Federico Zivolo to get all the cool features combined with the Bootstrap framework.</p>
+			<p>Skadi uses the <a href="https://github.com/FezVrasta/bootstrap-material-design" target="_blank"> Material Design Bootstrap theme</a> by Federico Zivolo to get all the cool features combined with the Bootstrap framework.</p>
 		</div>
 
 		<div class="col-md-4 col-lg-4">
 			<i class="material-icons">favorite_border</i>
 			
 			<h3>Underscores.me </h3>
-			<p>The base of MaterialWP is the popular <a href="http://underscores.me/" target="_blank">Underscores.me</a> WordPress starter theme. Feel free to make any changes and hack away on it.  </p>
+			<p>The base of Skadi is the popular <a href="http://underscores.me/" target="_blank">Underscores.me</a> WordPress starter theme. Feel free to make any changes and hack away on it.  </p>
 		</div>
 
 		<div class="col-md-4 col-lg-4">
 			
 			<i class="material-icons">thumb_up</i>
 			<h3>Features</h3>
-			<p>You can use all the Bootstrap features and components throughout MaterialWP. Don't forget about all 740 original Material Design icons!</p>
+			<p>You can use all the Bootstrap features and components throughout Skadi. Don't forget about all 740 original Material Design icons!</p>
 		</div>
 	</div>
 
-	<p class="lead">MaterialWP is free! Download it on GitHub.</p>
+	<p class="lead">Skadi is free! Download it on GitHub.</p>
 	<p><a href="https://github.com/braginteractive/materialwp" target="_blank" class="btn btn-default btn-raised btn-lg"> View on GitHub</a> </p>
 
 	</div>
