@@ -23,12 +23,19 @@
 <div id="page" class="site">
 
 	<header id="masthead" class="site-header" role="banner">
-	    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a href="#" rel="home">
+			<img class="logo" src="https://skadi-site.e-captain.nl/images/zwart-extern-medium.png">
+		</a>
+   		<div class="csstry"></div>
+   		<div class="background-image" style="background-image: url(https://skadi-site.e-captain.nl/images/skadi-skiff-2.jpg)"></div>
+	    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	    	<div class="container">
 			   <div class="navbar-brand mb-0"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
+			   
 				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 				</button>
+				
 		   		<div class="collapse navbar-collapse" id="navbarNav">
 	            <?php
 	            $args = array(
@@ -45,7 +52,7 @@
 	          </div>
 
 	        </div>
-		</nav>
+		</nav> -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

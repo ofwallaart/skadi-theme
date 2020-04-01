@@ -1,7 +1,110 @@
 .site-header {
-	margin-bottom: 3em;
+  margin-bottom: 3em;
 }
 
 .navbar-brand a {
-	color: $white;
+  color: $white;
+}
+
+#page {
+  display: grid;
+  grid-template-columns: 25% auto;
+  grid-template-rows: auto auto;
+  grid-template-areas: "side content " "footer footer ";
+}
+
+header {
+  grid-area: side;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 100vh;
+  .csstry {
+    position: absolute;
+    top: 0;
+    right: -1px;
+    bottom: 0;
+    width: 100%;
+    background: white;
+    /* The points are: centered top, left bottom, right bottom */
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  }
+  .logo {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    width: 20%;
+    height: auto;
+    z-index: 1;
+    img {
+      height: 100vh;
+    }
+  }
+}
+
+footer {
+  grid-area: footer;
+  z-index: 1;
+  color: white;
+}
+
+#content {
+  grid-area: content;
+}
+
+@media (max-width: 576px) {
+  #page {
+    grid-template-columns: auto;
+    grid-template-rows: 100px auto;
+    grid-template-areas:
+      "side"
+      "content"
+      "footer";
+  }
+  header {
+    height: auto;
+    .logo {
+      width: 50px;
+      left: 10px;
+      top: 10px;
+    }
+  }
+}
+
+.background-image {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: 80% 70%;
+}
+
+.back-button {
+  margin: 0 auto;
+  width: 30px;
+  font-size: 30px;
+  display: block;
+}
+
+h1 {
+  font-family: "gothambold1" !important;
+}
+
+h2 {
+  font-family: "GothamBook" !important;
+  margin-top: 10px;
+}
+
+h3,
+.par-header {
+  font-family: "gothambold1" !important;
+  font-size: 27px;
+  text-transform: uppercase;
+}
+
+h4,
+.par-subheader {
+  font-family: "GothamBook" !important;
+  font-size: 18px;
+  text-transform: uppercase;
 }

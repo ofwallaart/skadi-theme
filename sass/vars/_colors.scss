@@ -2,3 +2,10 @@
 # Make changes to the colors
 --------------------------------------------------------------*/
 
+// $primary: #1e3b71;
+// $danger: red;
+
+$theme-colors: (
+  "primary": $primary,
+  "danger": $danger
+);

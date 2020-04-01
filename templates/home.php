@@ -13,6 +13,7 @@
  */
 
 get_header(); ?>
+<div class="home">
 
 <div class="home-hero">
 	<div class="container">
@@ -56,3 +57,4 @@ get_header(); ?>
 	</div>
 </div>
 <?php get_footer(); ?>
+</div>
