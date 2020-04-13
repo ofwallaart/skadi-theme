@@ -1,4 +1,3 @@
-
 /*--------------------------------------------------------------
 ## Layouts
 --------------------------------------------------------------*/
@@ -29,7 +28,26 @@
 --------------------------------------------------------------*/
 @import "footer";
 
-
 .site-content {
-	word-break: break-word;
+  word-break: break-word;
+}
+
+/*--------------------------------------------------------------
+## Import Fonts
+--------------------------------------------------------------*/
+
+@font-face {
+  font-family: "gothambold";
+  src: url("./fonts/gotham_bold-webfont.woff") format("woff2"),
+    url("./fonts/gotham_bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "gothambook";
+  src: url("./fonts/gotham_book_regular-webfont.woff2") format("woff2"),
+    url("./fonts/gotham_book_regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }

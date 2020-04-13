@@ -27,7 +27,16 @@
 			<img class="logo" src="https://skadi-site.e-captain.nl/images/zwart-extern-medium.png">
 		</a>
    		<div class="csstry"></div>
-   		<div class="background-image" style="background-image: url(https://skadi-site.e-captain.nl/images/skadi-skiff-2.jpg)"></div>
+   		<div class="background-image" style="background-image: url(
+			   <?php 
+				if ( has_post_thumbnail(get_queried_object_id()) ) {
+					echo get_the_post_thumbnail_url(get_queried_object_id(),'full');
+				}
+				else {
+					echo 'https://skadi-site.e-captain.nl/images/zwart-extern-medium.png';
+				}
+			?>
+		   )"></div>
 	    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	    	<div class="container">
 			   <div class="navbar-brand mb-0"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>

@@ -13,7 +13,7 @@
   grid-template-areas: "side content " "footer footer ";
 }
 
-header {
+header#masthead {
   grid-area: side;
   position: sticky;
   top: 0;
@@ -26,7 +26,7 @@ header {
     right: -1px;
     bottom: 0;
     width: 100%;
-    background: white;
+    background: $body-bg;
     /* The points are: centered top, left bottom, right bottom */
     clip-path: polygon(100% 0, 0 100%, 100% 100%);
   }
@@ -62,7 +62,7 @@ footer {
       "content"
       "footer";
   }
-  header {
+  header#masthead {
     height: auto;
     .logo {
       width: 50px;
@@ -76,7 +76,7 @@ footer {
   width: 100%;
   height: 100vh;
   background-size: cover;
-  background-position: 80% 70%;
+  background-position: 50% 70%;
 }
 
 .back-button {
@@ -87,24 +87,35 @@ footer {
 }
 
 h1 {
-  font-family: "gothambold1" !important;
+  font-family: "gothambold" !important;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2rem;
 }
 
 h2 {
-  font-family: "GothamBook" !important;
+  font-family: "gothambook" !important;
   margin-top: 10px;
+
+  &.sub-title {
+    text-align: center;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: theme-color(primary);
+    margin-bottom: 2rem;
+  }
 }
 
 h3,
 .par-header {
-  font-family: "gothambold1" !important;
+  font-family: "gothambold" !important;
   font-size: 27px;
   text-transform: uppercase;
 }
 
 h4,
 .par-subheader {
-  font-family: "GothamBook" !important;
+  font-family: "gothambook" !important;
   font-size: 18px;
   text-transform: uppercase;
 }
