@@ -16,7 +16,7 @@
 
 		<div class="footer__addr">
 			<div class="footer-logo">
-				<img src='https://skadi-site.e-captain.nl/images/nieuw-logo-wit-10x-small.png' class="footer_logo" style="width:120px"></img>
+				<img src='<?php echo esc_url( get_theme_mod( 'skadi-footer-image-left' ) ); ?>' class="footer_logo" style="width:120px">
 			</div>
 			 	<p>&copy; 2019. Alle rechten voorbehouden.</p>
 				<a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>

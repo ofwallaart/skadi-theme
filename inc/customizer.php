@@ -81,6 +81,39 @@ function skadi_front_callout($wp_customize){
 		'type' => 'dropdown-pages'
 	)));
 
+	/**
+	* Control for footer image
+	*
+	*/
+	$wp_customize->add_section('skadi-footer-image', array(
+		'title'=> 'Footer',
+		'priority' => 10,
+		'description' => __("The Footer can be adjusted to preferences", 'skadi'),
+	));
+
+	$wp_customize->add_setting('skadi-footer-image-left', array(
+		'default' => '',
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options'
+	));
+
+	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize,
+	'skadi-footer-image-left-button', array(
+		'label'=>'Footer Image',
+		'section'=>'skadi-footer-image',
+		'settings'=> 'skadi-footer-image-left',
+		'button_labels' => array( // Optional.
+         'select' => __( 'Select Image' ),
+         'change' => __( 'Change Image' ),
+         'remove' => __( 'Remove' ),
+         'default' => __( 'Default' ),
+         'placeholder' => __( 'No image selected' ),
+         'frame_title' => __( 'Select Image' ),
+         'frame_button' => __( 'Choose Image' ),
+      )
+	)));
+
+
 	/*
 	* Make control that lets you display the logo at the bottom end of the page
 	*/
