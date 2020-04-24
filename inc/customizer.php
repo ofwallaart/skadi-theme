@@ -47,6 +47,17 @@ function skadi_front_callout($wp_customize){
 		'default'=> 'Example Text'
 	));
 
+	$wp_customize->add_setting('skadi-footer-email-setting', array(
+		'default'=> 'example@gmail.com'
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize,
+	'skadi-email-button-control', array(
+		'label'=>'Email address',
+		'section'=>'skadi-front-callout-section',
+		'settings'=> 'skadi-footer-email-setting'
+	)));
+
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize,
 	'skadi-front-left-button-control', array(
 		'label'=>'Left Button',
