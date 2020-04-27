@@ -42,7 +42,15 @@ function skadi_register_required_plugins() {
 			'slug'      => 'wp-subtitle',
             'required'  => true,
             'force_activation'   => true
-		)
+		),
+
+		array(
+			'name'      => 'skadi-blocks',
+			'slug'      => 'skadi-blocks',
+			'source'    => 'https://github.com/ofwallaart/skadi-blocks/archive/master.zip',
+			'required'  => true,
+		),
+
 
 	);
 

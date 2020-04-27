@@ -19,12 +19,21 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class("no-image"); ?>>
 <div id="page" class="site">
 
 	<header id="masthead" class="site-header" role="banner">
 		<a href="#" rel="home">
-			<img class="logo" src="https://skadi-site.e-captain.nl/images/zwart-extern-medium.png">
+		<img class="logo" src="
+		<?php 
+				if ( get_theme_mod( 'skadi-thumbnail-setting' )) {
+					echo esc_url( get_theme_mod( 'skadi-thumbnail-setting' ) );
+				}
+				else {
+					echo "https://skadi-site.e-captain.nl/images/zwart-extern-medium.png";
+				}
+			?>
+		">
 		</a>
    		<div class="csstry"></div>
    		<div class="background-image" style="background-image: url(
@@ -33,7 +42,7 @@
 					echo get_the_post_thumbnail_url(get_queried_object_id(),'full');
 				}
 				else {
-					echo 'https://skadi-site.e-captain.nl/images/zwart-extern-medium.png';
+					echo get_background_image();
 				}
 			?>
 		   )"></div>
@@ -63,5 +72,5 @@
 	        </div>
 		</nav> -->
 	</header><!-- #masthead -->
-
+	<div id="previous"><a href="javascript:history.back()" data-toggle="tooltip" data-placement="bottom" title="Ga Terug"><i class="material-icons">arrow_back_ios</i></a></div>
 	<div id="content" class="site-content">
