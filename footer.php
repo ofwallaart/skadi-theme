@@ -16,52 +16,39 @@
 
 		<div class="footer__addr">
 			<div class="footer-logo">
-				<img src='<?php echo esc_url( get_theme_mod( 'skadi-footer-image-left' ) ); ?>' class="footer_logo" style="width:120px">
+				<img src='<?php echo esc_url( get_theme_mod( 'skadi-footer-image-left' ) ); ?>' class="footer_logo">
 			</div>
-			 	<p>&copy; 2019. Alle rechten voorbehouden.</p>
-				<a class="footer__btn" href="mailto:<?php echo get_theme_mod( 'skadi-footer-email-setting' )  ?>">Email Us</a>
+			 	<p class="legal">&copy; <?php echo date("Y") ?>. Alle rechten voorbehouden.</p>
+				<a class="btn btn-outline-light" href="mailto:<?php echo get_theme_mod( 'skadi-footer-email-setting' )  ?>">Email Ons</a>
 		</div>
-
-		<ul class="footer_container">
-	    <li class="nav__item">
-
-	      <ul class="nav__ul">
-					<?php
-					if(is_active_sidebar('footer-1')){
-					dynamic_sidebar('footer-1');
-					}
-					?>
-	      </ul>
-	    </li>
-	    <li class="nav__item">
-
-	      <ul class="nav__ul">
-					<?php
-					if(is_active_sidebar('footer-2')){
-					dynamic_sidebar('footer-2');
-					}
-					?>
-	      </ul>
-	    </li>
-	    <li class="nav__item">
-	      <ul class="nav__ul">
-					<?php
-					if(is_active_sidebar('footer-3')){
-					dynamic_sidebar('footer-3');
-					}
-					?>
-	      </ul>
-	    </li>
-			<li class="nav__item">
-				<ul class="nav__ul">
-					<?php
-					if(is_active_sidebar('footer-4')){
-					dynamic_sidebar('footer-4');
-					}
-					?>
-				</ul>
-			</li>
-	  </ul>
+		<div class="footer_widget">
+			<?php
+			if(is_active_sidebar('footer-1')){
+			dynamic_sidebar('footer-1');
+			}
+			?>
+	    </div>
+	    <div class="footer_widget">
+			<?php
+			if(is_active_sidebar('footer-2')){
+			dynamic_sidebar('footer-2');
+			}
+			?>
+	    </div>
+	     <div class="footer_widget">
+			<?php
+			if(is_active_sidebar('footer-3')){
+			dynamic_sidebar('footer-3');
+			}
+			?>
+	    </div>
+		<div class="footer_widget">
+			<?php
+			if(is_active_sidebar('footer-4')){
+			dynamic_sidebar('footer-4');
+			}
+			?>
+		</div>
 	</div>
 </footer>
 </div><!-- #page -->
