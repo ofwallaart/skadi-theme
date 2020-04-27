@@ -136,5 +136,3 @@ require get_template_directory() . '/inc/bootstrap-walker.php';
  */
 require_once get_template_directory() . '/inc/require-plugins.php';
 
-
-require_once get_template_directory() . '/inc/customizer-sass.php';

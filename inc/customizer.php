@@ -122,5 +122,118 @@ function skadi_front_callout($wp_customize){
 		'default' => ''
 	));
 
+	// main color ( site title, h1, h2, h4. h6, widget headings, nav links, footer headings )
+	$txtcolors[] = array(
+		'slug'=>'color_scheme_1', 
+		'default' => '#1e3b70',
+		'label' => 'Main Color'
+	);
+	
+	// secondary color ( site description, sidebar headings, h3, h5, nav links on hover )
+	$txtcolors[] = array(
+		'slug'=>'color_scheme_2', 
+		'default' => '#3363BD',
+		'label' => 'Secondary Color'
+	);
+	
+	// link color
+	$txtcolors[] = array(
+		'slug'=>'link_color', 
+		'default' => '#008AB7',
+		'label' => 'Link Color'
+	);
+	
+	// link color ( hover, active )
+	$txtcolors[] = array(
+		'slug'=>'hover_link_color', 
+		'default' => '#9e4059',
+		'label' => 'Link Color (on hover)'
+	);
+
+	// add the settings and controls for each color
+	foreach( $txtcolors as $txtcolor ) {
+	
+		// SETTINGS
+		$wp_customize->add_setting(
+			$txtcolor['slug'], array(
+				'default' => $txtcolor['default'],
+				'type' => 'option', 
+				'capability' =>  'edit_theme_options'
+			)
+		);
+		// CONTROLS
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				$txtcolor['slug'], 
+				array('label' => $txtcolor['label'], 
+				'section' => 'colors',
+				'settings' => $txtcolor['slug'])
+			)
+		);
+	}
+
 }
 add_action( 'customize_register', 'skadi_front_callout');
+
+function skadi_customize_colors() {
+	/**********************
+	text colors
+	**********************/
+	// main color
+	$color_scheme_1 = get_option( 'color_scheme_1' );
+	
+	// secondary color
+	$color_scheme_2 = get_option( 'color_scheme_2' );
+	
+	// link color
+	$link_color = get_option( 'link_color' );
+	
+	// hover or active link color
+	$hover_link_color = get_option( 'hover_link_color' );
+	/****************************************
+	styling
+	****************************************/
+	?>
+	<style>
+	
+	
+	/* color scheme */
+	
+	/* main color */
+	.mat-button, h2.sub-title, .btn.btn-outline-primary, .btn-outline-primary.custom-file-control::before, a { 
+		color:  <?php echo $color_scheme_1; ?>; 
+	}
+
+	.mat-button, .btn.btn-outline-primary, .btn-outline-primary.custom-file-control::before, .btn.bmd-btn-fab.btn-primary, .bmd-btn-fab.btn-primary.custom-file-control::before, .btn.btn-raised.btn-primary, .btn-raised.btn-primary.custom-file-control::before, .btn-group-raised .btn.btn-primary, .btn-group-raised .btn-primary.custom-file-control::before { 
+		border-color:  <?php echo $color_scheme_1; ?>; 
+	}
+
+	.footer, #divider, .btn.bmd-btn-fab.btn-primary, .bmd-btn-fab.btn-primary.custom-file-control::before, .btn.btn-raised.btn-primary, .btn-raised.btn-primary.custom-file-control::before, .btn-group-raised .btn.btn-primary, .btn-group-raised .btn-primary.custom-file-control::before {
+		background-color: <?php echo $color_scheme_1; ?> !important; 
+	}
+	
+	/* secondary color */
+	#site-description, .menu.main a:active, .menu.main a:hover {
+		color:  <?php echo $color_scheme_2; ?>; 
+	}
+	.footer__btn {
+		background-color: <?php echo $color_scheme_2; ?> !important; 
+	}
+	.menu.main,
+	.fatfooter {
+		border-top: 1px solid <?php echo $color_scheme_2; ?>;
+	}
+	.menu.main {
+		border-bottom: 1px solid <?php echo $color_scheme_2; ?>;  
+	}
+	.fatfooter {
+		border-bottom: 1px solid <?php echo $color_scheme_2; ?>;
+	}
+
+	
+	</style>
+		
+	<?php
+}
+add_action( 'wp_head', 'skadi_customize_colors' );
