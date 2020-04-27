@@ -47,6 +47,17 @@ function skadi_front_callout($wp_customize){
 		'default'=> 'Example Text'
 	));
 
+	$wp_customize->add_setting('skadi-footer-email-setting', array(
+		'default'=> 'example@gmail.com'
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize,
+	'skadi-email-button-control', array(
+		'label'=>'Email address',
+		'section'=>'skadi-front-callout-section',
+		'settings'=> 'skadi-footer-email-setting'
+	)));
+
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize,
 	'skadi-front-left-button-control', array(
 		'label'=>'Left Button',
@@ -86,12 +97,18 @@ function skadi_front_callout($wp_customize){
 	*
 	*/
 	$wp_customize->add_section('skadi-footer-image', array(
-		'title'=> 'Footer',
+		'title'=> 'Logo\'s',
 		'priority' => 10,
 		'description' => __("The Footer can be adjusted to preferences", 'skadi'),
 	));
 
 	$wp_customize->add_setting('skadi-footer-image-left', array(
+		'default' => '',
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options'
+	));
+
+	$wp_customize->add_setting('skadi-front-image-setting', array(
 		'default' => '',
 		'type' => 'theme_mod',
 		'capability' => 'edit_theme_options'
@@ -110,7 +127,24 @@ function skadi_front_callout($wp_customize){
          'placeholder' => __( 'No image selected' ),
          'frame_title' => __( 'Select Image' ),
          'frame_button' => __( 'Choose Image' ),
+  ))));
+
+	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize,
+	'skadi-front-image', array(
+		'label'=>'Lander Logo',
+		'section'=>'skadi-footer-image',
+		'settings'=> 'skadi-front-image-setting',
+		'button_labels' => array( // Optional.
+         'select' => __( 'Select Image' ),
+         'change' => __( 'Change Image' ),
+         'remove' => __( 'Remove' ),
+         'default' => __( 'Default' ),
+         'placeholder' => __( 'No image selected' ),
+         'frame_title' => __( 'Select Image' ),
+         'frame_button' => __( 'Choose Image' ),
       )
+
+
 	)));
 
 
