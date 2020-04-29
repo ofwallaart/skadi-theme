@@ -23,7 +23,7 @@
 <div id="page" class="site">
 
 	<header id="masthead" class="site-header" role="banner">
-		<a href="#" rel="home">
+		<a href="/" rel="home">
 		<img class="logo" src="
 		<?php 
 				if ( get_theme_mod( 'skadi-thumbnail-setting' )) {
