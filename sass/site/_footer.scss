@@ -54,8 +54,8 @@ html {
 
   a {
     color: white;
-    font-family: "Gotham Book";
-    font-size: 15px;
+    font-family: "gothambook", "roboto";
+    font-size: $font-size-base;
 
     &:hover {
       color: #afafaf;
@@ -73,7 +73,7 @@ html {
 }
 
 .footer li {
-  line-height: 2em;
+  line-height: 1.8em;
 }
 
 .footer a {
