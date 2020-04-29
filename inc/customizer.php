@@ -190,16 +190,16 @@ function skadi_front_callout($wp_customize){
 	
 	// link color
 	$txtcolors[] = array(
-		'slug'=>'link_color', 
-		'default' => '#008AB7',
-		'label' => 'Link Color'
+		'slug'=>'landing_button_color', 
+		'default' => '#FFF',
+		'label' => 'Landing Button Color'
 	);
 	
 	// link color ( hover, active )
 	$txtcolors[] = array(
-		'slug'=>'hover_link_color', 
-		'default' => '#9e4059',
-		'label' => 'Link Color (on hover)'
+		'slug'=>'landing_button_outline_color', 
+		'default' => '#FFF',
+		'label' => 'Landing Button Outline Color'
 	);
 
 	// add the settings and controls for each color
@@ -239,10 +239,10 @@ function skadi_customize_colors() {
 	$color_scheme_2 = get_option( 'color_scheme_2' );
 	
 	// link color
-	$link_color = get_option( 'link_color' );
+	$landing_button_color = get_option( 'landing_button_color' );
 	
 	// hover or active link color
-	$hover_link_color = get_option( 'hover_link_color' );
+	$landing_button_outline_color = get_option( 'landing_button_outline_color' );
 	/****************************************
 	styling
 	****************************************/
@@ -253,7 +253,7 @@ function skadi_customize_colors() {
 	/* color scheme */
 	
 	/* main color */
-	.mat-button, h2.sub-title, .btn.btn-outline-primary, .btn-outline-primary.custom-file-control::before, a { 
+	h4:hover, .wp-block-cgb-skadi-menu-item a:hover h4, .mat-button, h2.sub-title, .btn.btn-outline-primary, .btn-outline-primary.custom-file-control::before, a { 
 		color:  <?php echo $main_color_scheme; ?>; 
 	}
 
@@ -284,6 +284,16 @@ function skadi_customize_colors() {
 	.fatfooter {
 		border-bottom: 1px solid <?php echo $color_scheme_2; ?>;
 	}
+
+	/* Landing button color */
+	.btn.btn-outline-primary.btn-landing, .btn-outline-primary.btn-landing.custom-file-control::before, a { 
+		color:  <?php echo $landing_button_color; ?>; 
+	}
+
+	.btn.btn-outline-primary.btn-landing, .btn-outline-primary.btn-landing.custom-file-control::before, .btn.bmd-btn-fab.btn-primary.btn-landing, .bmd-btn-fab.btn-primary.btn-landing.custom-file-control::before, .btn.btn-raised.btn-primary.btn-landing, .btn-raised.btn-primary.btn-landing.custom-file-control::before, .btn-group-raised .btn.btn-primary.btn-landing, .btn-group-raised .btn-primary.btn-landing.custom-file-control::before { 
+		border-color:  <?php echo $landing_button_outline_color; ?>; 
+	}
+
 
 	
 	</style>

@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Skadi Page
+ * Template Name: Skadi Home Page
  *
- * Displays a full width Skadi page without a sidebar.
+ * Displays a full width Skadi page without a sidebar and hides the titles.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -20,9 +20,9 @@ get_header(); ?>
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<div class="card-body">
 						<header class="entry-header">
-							<?php the_title( '<h1 class="entry-title">', '</h1>' );
+							<?php the_title( '<h1 class="entry-title style="display: none"">', '</h1>' );
 							echo apply_filters( 'plugins/wp_subtitle/get_subtitle', '', array(
-							'before'  => '<h2 class="sub-title primary">',
+							'before'  => '<h2 class="sub-title primary style="display: none"">',
 							'after'   => '</h2>',
 							'post_id' => get_the_ID()
 						) ); ?>

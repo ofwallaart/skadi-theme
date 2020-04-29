@@ -48,10 +48,10 @@
             </div>
             <div id="c4440">
               <div id="buttons">
-                <a class="btn btn-outline-primary btn-lg" href="<?php echo get_permalink(get_theme_mod('skadi-front-callout-link-right'))?>">
+                <a class="btn btn-outline-primary btn-lg btn-landing" href="<?php echo get_permalink(get_theme_mod('skadi-front-callout-link-right'))?>">
                   <?php echo get_theme_mod('skadi-front-callout-button-right') ?>
                 </a>
-                <a class="btn btn-outline-primary btn-lg" href="<?php echo get_permalink(get_theme_mod('skadi-front-callout-link-left'))?>">
+                <a class="btn btn-outline-primary btn-lg btn-landing" href="<?php echo get_permalink(get_theme_mod('skadi-front-callout-link-left'))?>">
                   <?php echo get_theme_mod('skadi-front-callout-button-left') ?>
                 </a>
               </div>
