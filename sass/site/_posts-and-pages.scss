@@ -323,3 +323,21 @@ html {
 body {
   min-height: 100vh;
 }
+
+@media (max-width: 576px) {
+  .section.header {
+    float: none;
+    width: 100%;
+    height: 100vh;
+    .trapezoid {
+      top: 0;
+      left: -30%;
+      width: 130%;
+      height: 100vh;
+    }
+  }
+  #buttons {
+    flex-direction: column;
+    justify-content: center;
+  }
+}

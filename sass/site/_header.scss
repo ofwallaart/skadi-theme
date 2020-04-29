@@ -69,16 +69,35 @@ footer {
     grid-template-rows: 100px auto;
     grid-template-areas:
       "side"
+      "previous"
       "content"
       "footer";
   }
   header#masthead {
+    z-index: 1;
     height: auto;
-    .logo {
-      width: 50px;
-      left: 10px;
-      top: 10px;
+    a {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      width: 30px;
     }
+    .logo {
+      width: 30px;
+    }
+    .csstry {
+      height: 60px;
+    }
+  }
+  #previous {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 76px;
+    overflow: hidden;
+  }
+
+  #content {
+    margin-top: -64px;
   }
 }
 
@@ -154,5 +173,15 @@ h4 {
   h2 {
     font-family: "gothambold";
     text-transform: uppercase;
+  }
+}
+
+@media (max-width: 576px) {
+  .wp-block-cgb-block-text.flex .order-left h3 {
+    flex-direction: column;
+  }
+
+  #main .entry-content div:first-of-type > .wp-block-column {
+    flex-basis: 50% !important;
   }
 }

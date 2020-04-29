@@ -43,7 +43,11 @@ html {
 
 @media (max-width: 576px) {
   .footer .container {
+    margin-left: 0;
     grid-template-columns: 1fr;
+    .footer-logo {
+      padding-right: 0px;
+    }
   }
 }
 
