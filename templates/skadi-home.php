@@ -20,9 +20,9 @@ get_header(); ?>
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<div class="card-body">
 						<header class="entry-header">
-							<?php the_title( '<h1 class="entry-title style="display: none"">', '</h1>' );
+							<?php the_title( '<h1 class="entry-title" style="display: none">', '</h1>' );
 							echo apply_filters( 'plugins/wp_subtitle/get_subtitle', '', array(
-							'before'  => '<h2 class="sub-title primary style="display: none"">',
+							'before'  => '<h2 class="sub-title primary" style="display: none">',
 							'after'   => '</h2>',
 							'post_id' => get_the_ID()
 						) ); ?>

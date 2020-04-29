@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Skadi Page
+ * Template Name: Skadi Page Sidebar
  *
  * Displays a full width Skadi page with a sidebar.
  *
