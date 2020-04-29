@@ -136,3 +136,16 @@ require get_template_directory() . '/inc/bootstrap-walker.php';
  */
 require_once get_template_directory() . '/inc/require-plugins.php';
 
+/**
+ * Add Image size for menu items
+ */
+add_image_size( 'skadi-menu-item', 400, 400, true );
+
+add_filter( 'image_size_names_choose', 'custom_image_sizes' );
+
+function custom_image_sizes( $sizes ) {
+    return array_merge( $sizes, array(
+        'skadi-menu-item' => __( 'Skadi Menu Item' ),
+    ) );
+}
+
