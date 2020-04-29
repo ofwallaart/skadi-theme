@@ -18,7 +18,7 @@ var gulp = require("gulp"),
   zip = require("gulp-zip");
 
 var config = {
-  nodeDir: "./node_modules"
+  nodeDir: "./node_modules",
 };
 
 // automatically reloads the page when files changed
@@ -27,17 +27,17 @@ var browserSyncWatchFiles = ["./*.min.css", "./js/**/*.min.js", "./**/*.php"];
 // see: https://www.browsersync.io/docs/options/
 var browserSyncOptions = {
   watchTask: true,
-  proxy: "http://skadithema.local/"
+  proxy: "http://skadi.local/",
 };
 
 // Default error handler
-var onError = function(err) {
+var onError = function (err) {
   console.log("An error occured:", err.message);
   this.emit("end");
 };
 
 // Zip files up
-gulp.task("zip", function() {
+gulp.task("zip", function () {
   return gulp
     .src(
       [
@@ -52,7 +52,7 @@ gulp.task("zip", function() {
         "./template-parts/*",
         "./templates/*",
         "!bower_components",
-        "!node_modules"
+        "!node_modules",
       ],
       { base: "." }
     )
@@ -62,7 +62,7 @@ gulp.task("zip", function() {
 
 // Jshint outputs any kind of javascript problems you might have
 // Only checks javascript files inside /src directory
-gulp.task("jshint", function() {
+gulp.task("jshint", function () {
   return gulp
     .src("./js/src/*.js")
     .pipe(jshint())
@@ -73,7 +73,7 @@ gulp.task("jshint", function() {
 // Concatenates all files that it finds in the manifest
 // and creates two versions: normal and minified.
 // It's dependent on the jshint task to succeed.
-gulp.task("scripts", ["jshint"], function() {
+gulp.task("scripts", ["jshint"], function () {
   return (
     gulp
       .src("./js/manifest.js")
@@ -98,7 +98,7 @@ options.sass = {
   noCache: true,
   importer: tildeImporter,
   //imagePath: 'assets/img',
-  includePaths: [config.nodeDir + "/bootstrap-material-design/scss"]
+  includePaths: [config.nodeDir + "/bootstrap-material-design/scss"],
 };
 
 options.sassmin = {
@@ -108,11 +108,11 @@ options.sassmin = {
   importer: tildeImporter,
   outputStyle: "compressed",
   //imagePath: 'assets/img',
-  includePaths: [config.nodeDir + "/bootstrap-material-design/scss"]
+  includePaths: [config.nodeDir + "/bootstrap-material-design/scss"],
 };
 
 // Sass
-gulp.task("sass", function() {
+gulp.task("sass", function () {
   return gulp
     .src("./sass/style.scss")
     .pipe(plumber())
@@ -126,7 +126,7 @@ gulp.task("sass", function() {
 });
 
 // Sass-min - Release build minifies CSS after compiling Sass
-gulp.task("sass-min", function() {
+gulp.task("sass-min", function () {
   return gulp
     .src("./sass/style.scss")
     .pipe(plumber())
@@ -141,7 +141,7 @@ gulp.task("sass-min", function() {
 });
 
 // Optimize Images
-gulp.task("images", function() {
+gulp.task("images", function () {
   return gulp
     .src("./images/**/*")
     .pipe(imageoptim.optimize({ jpegmini: true }))
@@ -150,37 +150,37 @@ gulp.task("images", function() {
 });
 
 // Generate & Inline Critical-path CSS
-gulp.task("critical", function(cb) {
+gulp.task("critical", function (cb) {
   critical.generate({
     base: "./",
-    src: "http://skadithema.local",
+    src: "http://skadi.local",
     dest: "css/home.min.css",
     ignore: ["@font-face"],
     dimensions: [
       {
         width: 320,
-        height: 480
+        height: 480,
       },
       {
         width: 768,
-        height: 1024
+        height: 1024,
       },
       {
         width: 1280,
-        height: 960
-      }
+        height: 960,
+      },
     ],
-    minify: true
+    minify: true,
   });
 });
 
 // Starts browser-sync task for starting the server.
-gulp.task("browser-sync", function() {
+gulp.task("browser-sync", function () {
   browserSync.init(browserSyncWatchFiles, browserSyncOptions);
 });
 
 // Start the livereload server and watch files for change
-gulp.task("watch", function() {
+gulp.task("watch", function () {
   // don't listen to whole js folder, it'll create an infinite loop
   gulp.watch(["./js/**/*.js", "!./js/dist/*.js"], ["scripts"]);
 
@@ -191,6 +191,6 @@ gulp.task("watch", function() {
   //gulp.watch( './**/*.php' ).on('change', browserSync.reload);
 });
 
-gulp.task("default", ["watch", "browser-sync"], function() {
+gulp.task("default", ["watch", "browser-sync"], function () {
   // Does nothing in this task, just triggers the dependent 'watch'
 });

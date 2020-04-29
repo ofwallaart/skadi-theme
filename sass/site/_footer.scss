@@ -1,5 +1,88 @@
-.site-footer {
-  padding: 4rem 0;
-  margin-top: 4rem;
+.footer__addr {
+  color: #fff;
+  font-size: 15px;
+  font-family: Roboto, Arial;
+  font-weight: 300;
+  font-style: normal;
+  text-decoration: none;
+  text-transform: none;
+}
+
+html {
+  font-size: 100%;
+}
+
+.footer {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 35px 0px 30px 0px;
   background-color: theme-color(primary);
+  color: white;
+  .container {
+    margin-left: 25%;
+    display: grid;
+    grid-template-columns: auto 3fr 4fr 3fr 3fr;
+    .footer-logo {
+      margin: 0;
+      padding: 0;
+      display: inline;
+      padding-right: 25px;
+      img {
+        position: static;
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+        margin-bottom: 10px;
+      }
+    }
+    .legal {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .footer .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer_widget {
+  padding-right: 25px;
+  h3 {
+    font-size: 22px;
+  }
+
+  a {
+    color: white;
+    font-family: "gothambook", "roboto";
+    font-size: $font-size-base;
+
+    &:hover {
+      color: #afafaf;
+    }
+
+    transition: box-shadow 0.2s $bmd-animation-curve-fast-out-linear-in,
+      background-color 0.2s $bmd-animation-curve-default,
+      color 0.2s $bmd-animation-curve-default;
+  }
+}
+
+.footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer li {
+  line-height: 1.8em;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 40.375em) {
+  .footer__nav > * {
+    flex: 1;
+  }
 }

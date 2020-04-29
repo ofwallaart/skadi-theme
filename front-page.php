@@ -37,14 +37,7 @@
 
 <body <?php body_class(); ?>>
 
-<div id="content" class="site-content">
-
-
-
-
-<html><head>
-</head>
-  <body data-gr-c-s-loaded="true">
+<div id="content" class="site-content
     <div id="sect4441">
       <div class="container-fluid outercontainer">
         <div class="row" id="row4441">
@@ -55,10 +48,10 @@
             </div>
             <div id="c4440">
               <div id="buttons">
-                <a class="mat-button" href="<?php echo get_permalink(get_theme_mod('skadi-front-callout-link-left'))?>">
+                <a class="btn btn-outline-primary btn-lg btn-landing" href="<?php echo get_permalink(get_theme_mod('skadi-front-callout-link-left'))?>">
                   <?php echo get_theme_mod('skadi-front-callout-button-left') ?>
                 </a>
-                <a class="mat-button" href="<?php echo get_permalink(get_theme_mod('skadi-front-callout-link-right'))?>">
+                <a class="btn btn-outline-primary btn-lg btn-landing" href="<?php echo get_permalink(get_theme_mod('skadi-front-callout-link-right'))?>">
                   <?php echo get_theme_mod('skadi-front-callout-button-right') ?>
                 </a>
               </div>
@@ -72,10 +65,7 @@
         </div>
       </div>
     </div>
-  </body>
-</html>
-
-</div>
+  </div>
 
 <?php wp_footer(); ?>
 

@@ -8,12 +8,12 @@
 
 #page {
   display: grid;
-  grid-template-columns: 25% auto;
+  grid-template-columns: 25% 30px auto;
   grid-template-rows: auto auto;
-  grid-template-areas: "side content " "footer footer ";
+  grid-template-areas: "side previous content " "footer footer footer ";
 }
 
-header {
+header#masthead {
   grid-area: side;
   position: sticky;
   top: 0;
@@ -26,7 +26,7 @@ header {
     right: -1px;
     bottom: 0;
     width: 100%;
-    background: white;
+    background: $body-bg;
     /* The points are: centered top, left bottom, right bottom */
     clip-path: polygon(100% 0, 0 100%, 100% 100%);
   }
@@ -37,9 +37,19 @@ header {
     width: 20%;
     height: auto;
     z-index: 1;
+    margin: 0;
     img {
       height: 100vh;
     }
+  }
+}
+
+#previous {
+  grid-area: previous;
+  margin-top: 2.25rem;
+  margin-left: 10px;
+  i {
+    font-size: 30px;
   }
 }
 
@@ -62,7 +72,7 @@ footer {
       "content"
       "footer";
   }
-  header {
+  header#masthead {
     height: auto;
     .logo {
       width: 50px;
@@ -76,7 +86,7 @@ footer {
   width: 100%;
   height: 100vh;
   background-size: cover;
-  background-position: 80% 70%;
+  background-position: 50% 70%;
 }
 
 .back-button {
@@ -87,24 +97,62 @@ footer {
 }
 
 h1 {
-  font-family: "gothambold1" !important;
+  font-family: "gothambold";
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2rem;
 }
 
 h2 {
-  font-family: "GothamBook" !important;
+  font-family: "gothambook";
   margin-top: 10px;
+
+  &.sub-title {
+    text-align: center;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: theme-color(primary);
+    margin-bottom: 2rem;
+  }
 }
 
 h3,
 .par-header {
-  font-family: "gothambold1" !important;
+  font-family: "gothambold" !important;
   font-size: 27px;
   text-transform: uppercase;
 }
 
-h4,
 .par-subheader {
-  font-family: "GothamBook" !important;
+  font-family: "gothambook" !important;
   font-size: 18px;
   text-transform: uppercase;
+}
+
+h4 {
+  font-family: "gothambook" !important;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #0e1b35;
+  &:hover {
+    text-decoration: none;
+    color: theme-color(primary);
+  }
+
+  transition: color 0.2s $bmd-animation-curve-default;
+}
+
+.wp-block-cgb-skadi-menu-item a:hover {
+  text-decoration: none;
+  text-decoration: none;
+  h4 {
+    color: theme-color(primary);
+  }
+}
+
+.wp-block-cgb-block-skadi-block {
+  h2 {
+    font-family: "gothambold";
+    text-transform: uppercase;
+  }
 }

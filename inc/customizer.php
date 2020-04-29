@@ -114,6 +114,12 @@ function skadi_front_callout($wp_customize){
 		'capability' => 'edit_theme_options'
 	));
 
+	$wp_customize->add_setting('skadi-thumbnail-setting', array(
+		'default' => '',
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options'
+	));
+
 	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize,
 	'skadi-footer-image-left-button', array(
 		'label'=>'Footer Image',
@@ -127,11 +133,11 @@ function skadi_front_callout($wp_customize){
          'placeholder' => __( 'No image selected' ),
          'frame_title' => __( 'Select Image' ),
          'frame_button' => __( 'Choose Image' ),
-  ))));
+  	))));
 
 	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize,
 	'skadi-front-image', array(
-		'label'=>'Lander Logo',
+		'label'=>'Landing Image',
 		'section'=>'skadi-footer-image',
 		'settings'=> 'skadi-front-image-setting',
 		'button_labels' => array( // Optional.
@@ -142,10 +148,22 @@ function skadi_front_callout($wp_customize){
          'placeholder' => __( 'No image selected' ),
          'frame_title' => __( 'Select Image' ),
          'frame_button' => __( 'Choose Image' ),
-      )
+    ))));
 
-
-	)));
+	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize,
+	'skadi-thumbnail', array(
+		'label'=>'Thumbnail Image (appears in top-left corner)',
+		'section'=>'skadi-footer-image',
+		'settings'=> 'skadi-thumbnail-setting',
+		'button_labels' => array( // Optional.
+         'select' => __( 'Select Image' ),
+         'change' => __( 'Change Image' ),
+         'remove' => __( 'Remove' ),
+         'default' => __( 'Default' ),
+         'placeholder' => __( 'No image selected' ),
+         'frame_title' => __( 'Select Image' ),
+         'frame_button' => __( 'Choose Image' ),
+    ))));
 
 
 	/*
@@ -156,5 +174,130 @@ function skadi_front_callout($wp_customize){
 		'default' => ''
 	));
 
+	// main color ( site title, h1, h2, h4. h6, widget headings, nav links, footer headings )
+	$txtcolors[] = array(
+		'slug'=>'main_color_scheme', 
+		'default' => '#1e3b70',
+		'label' => 'Main Color'
+	);
+	
+	// secondary color ( site description, sidebar headings, h3, h5, nav links on hover )
+	$txtcolors[] = array(
+		'slug'=>'color_scheme_2', 
+		'default' => '#3363BD',
+		'label' => 'Secondary Color'
+	);
+	
+	// link color
+	$txtcolors[] = array(
+		'slug'=>'landing_button_color', 
+		'default' => '#FFF',
+		'label' => 'Landing Button Color'
+	);
+	
+	// link color ( hover, active )
+	$txtcolors[] = array(
+		'slug'=>'landing_button_outline_color', 
+		'default' => '#FFF',
+		'label' => 'Landing Button Outline Color'
+	);
+
+	// add the settings and controls for each color
+	foreach( $txtcolors as $txtcolor ) {
+	
+		// SETTINGS
+		$wp_customize->add_setting(
+			$txtcolor['slug'], array(
+				'default' => $txtcolor['default'],
+				'type' => 'option', 
+				'capability' =>  'edit_theme_options'
+			)
+		);
+		// CONTROLS
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				$txtcolor['slug'], 
+				array('label' => $txtcolor['label'], 
+				'section' => 'colors',
+				'settings' => $txtcolor['slug'])
+			)
+		);
+	}
+
 }
 add_action( 'customize_register', 'skadi_front_callout');
+
+function skadi_customize_colors() {
+	/**********************
+	text colors
+	**********************/
+	// main color
+	$main_color_scheme= get_option( 'main_color_scheme' );
+	
+	// secondary color
+	$color_scheme_2 = get_option( 'color_scheme_2' );
+	
+	// link color
+	$landing_button_color = get_option( 'landing_button_color' );
+	
+	// hover or active link color
+	$landing_button_outline_color = get_option( 'landing_button_outline_color' );
+	/****************************************
+	styling
+	****************************************/
+	?>
+	<style>
+	
+	
+	/* color scheme */
+	
+	/* main color */
+	h4:hover, .wp-block-cgb-skadi-menu-item a:hover h4, .mat-button, h2.sub-title, .btn.btn-outline-primary, .btn-outline-primary.custom-file-control::before, a { 
+		color:  <?php echo $main_color_scheme; ?>; 
+	}
+
+	.mat-button, .btn.btn-outline-primary, .btn-outline-primary.custom-file-control::before, .btn.bmd-btn-fab.btn-primary, .bmd-btn-fab.btn-primary.custom-file-control::before, .btn.btn-raised.btn-primary, .btn-raised.btn-primary.custom-file-control::before, .btn-group-raised .btn.btn-primary, .btn-group-raised .btn-primary.custom-file-control::before { 
+		border-color:  <?php echo $main_color_scheme; ?>; 
+	}
+
+	.footer, #divider, .btn.bmd-btn-fab.btn-primary, .bmd-btn-fab.btn-primary.custom-file-control::before, .btn.btn-raised.btn-primary, .btn-raised.btn-primary.custom-file-control::before, .btn-group-raised .btn.btn-primary, .btn-group-raised .btn-primary.custom-file-control::before {
+		background-color: <?php echo $main_color_scheme ; ?> !important; 
+	}
+	
+	/* secondary color */
+	#site-description, .menu.main a:active, .menu.main a:hover, .btn.btn-outline-secondary, .btn-outline-secondary.custom-file-control::before {
+		color:  <?php echo $color_scheme_2; ?>; 
+	}
+
+	.btn.btn-outline-secondary, .btn-outline-secondary.custom-file-control::before, .btn.bmd-btn-fab.btn-secondary, .bmd-btn-fab.btn-secondary.custom-file-control::before, .btn.btn-raised.btn-secondary, .btn-raised.btn-secondary.custom-file-control::before, .btn-group-raised .btn.btn-secondary, .btn-group-raised .btn-secondary.custom-file-control::before { 
+		border-color:  <?php echo $color_scheme_2; ?>; 
+	}
+
+	.menu.main,
+	.fatfooter {
+		border-top: 1px solid <?php echo $color_scheme_2; ?>;
+	}
+	.menu.main {
+		border-bottom: 1px solid <?php echo $color_scheme_2; ?>;  
+	}
+	.fatfooter {
+		border-bottom: 1px solid <?php echo $color_scheme_2; ?>;
+	}
+
+	/* Landing button color */
+	.btn.btn-outline-primary.btn-landing, .btn-outline-primary.btn-landing.custom-file-control::before, a { 
+		color:  <?php echo $landing_button_color; ?>; 
+	}
+
+	.btn.btn-outline-primary.btn-landing, .btn-outline-primary.btn-landing.custom-file-control::before, .btn.bmd-btn-fab.btn-primary.btn-landing, .bmd-btn-fab.btn-primary.btn-landing.custom-file-control::before, .btn.btn-raised.btn-primary.btn-landing, .btn-raised.btn-primary.btn-landing.custom-file-control::before, .btn-group-raised .btn.btn-primary.btn-landing, .btn-group-raised .btn-primary.btn-landing.custom-file-control::before { 
+		border-color:  <?php echo $landing_button_outline_color; ?>; 
+	}
+
+
+	
+	</style>
+		
+	<?php
+}
+add_action( 'wp_head', 'skadi_customize_colors' );

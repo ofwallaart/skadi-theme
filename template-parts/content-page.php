@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('card'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if ( has_post_thumbnail() ) : ?>
 		<div class="post-thumbnail">
 		    <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
@@ -20,7 +20,12 @@
 
 	<div class="card-body">
 		<header class="entry-header">
-			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			<?php the_title( '<h1 class="entry-title">', '</h1>' );
+			echo apply_filters( 'plugins/wp_subtitle/get_subtitle', '', array(
+			'before'  => '<h2 class="sub-title">',
+			'after'   => '</h2>',
+			'post_id' => get_the_ID()
+		) ); ?>
 		</header><!-- .entry-header -->
 
 		<div class="entry-content">
