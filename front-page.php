@@ -55,11 +55,11 @@
             </div>
             <div id="c4440">
               <div id="buttons">
-                <a class="mat-button" href="<?php echo get_permalink(get_theme_mod('skadi-front-callout-link-right'))?>">
-                  <?php echo get_theme_mod('skadi-front-callout-button-right') ?>
-                </a>
                 <a class="mat-button" href="<?php echo get_permalink(get_theme_mod('skadi-front-callout-link-left'))?>">
                   <?php echo get_theme_mod('skadi-front-callout-button-left') ?>
+                </a>
+                <a class="mat-button" href="<?php echo get_permalink(get_theme_mod('skadi-front-callout-link-right'))?>">
+                  <?php echo get_theme_mod('skadi-front-callout-button-right') ?>
                 </a>
               </div>
               <img class='front-logo' src='<?php echo esc_url( get_theme_mod( 'skadi-front-image-setting' ) ); ?>'>
