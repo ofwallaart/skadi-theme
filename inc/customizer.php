@@ -62,7 +62,7 @@ function skadi_front_callout($wp_customize){
 	'skadi-front-left-button-control', array(
 		'label'=>'Left Button',
 		'section'=>'skadi-front-callout-section',
-		'settings'=> 'skadi-front-callout-button-right'
+		'settings'=> 'skadi-front-callout-button-left'
 	)));
 
 	$wp_customize->add_setting('skadi-front-callout-link-left');
@@ -79,7 +79,7 @@ function skadi_front_callout($wp_customize){
 	'skadi-front-right-button-control', array(
 		'label'=>'Right Button',
 		'section'=>'skadi-front-callout-section',
-		'settings'=> 'skadi-front-callout-button-left'
+		'settings'=> 'skadi-front-callout-button-right'
 	)));
 
 	$wp_customize->add_setting('skadi-front-callout-link-right');
