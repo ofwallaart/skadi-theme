@@ -84,6 +84,10 @@ footer {
     }
     .logo {
       width: 30px;
+      max-width: 30px;
+      position: relative;
+      left: 0;
+      top: 0;
     }
     .csstry {
       height: 60px;
@@ -106,6 +110,8 @@ footer {
   height: 100vh;
   background-size: cover;
   background-position: 50% 70%;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
 }
 
 .back-button {
