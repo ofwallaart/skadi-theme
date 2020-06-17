@@ -183,8 +183,14 @@ h4 {
 }
 
 @media (max-width: 576px) {
-  .wp-block-cgb-block-text.flex .order-left h3 {
+  .wp-block-cgb-block-text.flex .order-left h3,
+  .wp-block-cgb-block-text.flex .order-right h3 {
     flex-direction: column;
+    align-items: normal;
+  }
+
+  .wp-block-cgb-block-text.flex h3 span:first-of-type {
+    margin-right: 0px;
   }
 
   #main .entry-content div:first-of-type > .wp-block-column {
